@@ -1,16 +1,20 @@
 """
-Module of useful functions for Image Processing and Artificial Vision
+I built a Python module with useful functions for Image Processing and Artificial Vision. 
+The impavi module is named using the initials (IM)age (P)rocessing and (A)rtificial (VI)sion. 
+ 
+You'll find some simple functions such as impavi.luminance(rgb) and impavi.equalize(im,plot=False)
+There are more complex algorithms like Floyd-Steinbeirg (FS) algorithm for error compensation and 
+the implementation of a Kirsch Compass filter. 
 
-@author: Ignacio Cordova Pou
+If the module is useful to you feel free to 
+share it citing "Ignacio Cordova; https://github.com/ignaciocordova"
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy
-from scipy import signal
 import skimage
 from scipy.ndimage.measurements import histogram
-from skimage.filters.rank import entropy
 from sklearn.cluster import KMeans
 from scipy import ndimage
 
