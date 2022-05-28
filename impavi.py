@@ -34,7 +34,19 @@ def luminance(rgb):
     return l_im 
 
 
+def channels(rgb):
+    """
+    Separates the channels of an RGB image.
 
+    Input: 3-channel RGB image
+    Output: 3 gray-scale images
+    """
+    r = rgb[:,:,0]
+    g = rgb[:,:,1]
+    b = rgb[:,:,2]
+
+    return r,g,b
+    
 def equalize(im,plot=False):
     
     """"
@@ -363,6 +375,23 @@ def apply_kmeans(im,k,plot=False):
     
     return 1-final_res
 
+
+#a function that returns a 2-d array with the same dimensions as the input image and a circle of zeros of radius r in the center
+def circle(im,r):
+    """
+    Creates a circle of radius r in the center of the image.
+    
+    Inputs: gray-scale image and radius
+    Output: image with circle
+    """
+    im_circle = np.zeros((im.shape[0],im.shape[1]))
+    for ii in range(im.shape[0]):
+        for jj in range(im.shape[1]):
+            if (ii-im.shape[0]//2)**2+(jj-im.shape[1]//2)**2<r**2:
+                im_circle[ii,jj]=1
+    return im_circle
+
+ 
 
 """
 The following functions were specially built for a project that 
